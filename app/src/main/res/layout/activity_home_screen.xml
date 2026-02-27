@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F7FA">
+
+    <View
+        android:id="@+id/topBarBackground"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:background="#84D5FA"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvDashboard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="EMS"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/searchBar"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:background="#E1EDF8"
+        android:hint="Search Employee..."
+        android:paddingHorizontal="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvDashboard" />
+
+    <HorizontalScrollView
+        android:id="@+id/summaryScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:paddingHorizontal="12dp"
+        android:scrollbars="none"
+        app:layout_constraintTop_toBottomOf="@id/topBarBackground"
+        app:layout_constraintBottom_toBottomOf="@id/topBarBackground">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:orientation="horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="140dp"
+                android:layout_height="100dp"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="120" android:textSize="24sp" android:textStyle="bold" android:textColor="@color/black"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Total Staff"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="140dp"
+                android:layout_height="100dp"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="08" android:textSize="24sp" android:textStyle="bold" android:textColor="#FF5722"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="On Leave"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="140dp"
+                android:layout_height="100dp"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="05" android:textSize="24sp" android:textStyle="bold" android:textColor="#4CAF50"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="New Joiners"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <LinearLayout
+        android:id="@+id/actionsRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/summaryScrollView">
+
+        <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Add Staff" android:layout_margin="4dp" style="@style/Widget.MaterialComponents.Button.TextButton.Icon"/>
+        <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Attendance" android:layout_margin="4dp" style="@style/Widget.MaterialComponents.Button.TextButton.Icon"/>
+        <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Reports" android:layout_margin="4dp" style="@style/Widget.MaterialComponents.Button.TextButton.Icon"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvRecentTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="Recent Employees"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/actionsRow" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvEmployees"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/tvRecentTitle"
+        tools:listitem="@layout/itemlist" />
+
+   </androidx.constraintlayout.widget.ConstraintLayout>
