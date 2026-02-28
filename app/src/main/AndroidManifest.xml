@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EmployManagementSystem">
         <activity
+            android:name=".ReportActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AttendanceActivity"
+            android:exported="false" />
+        <activity
             android:name=".DetailsScreen"
             android:exported="false" />
         <activity

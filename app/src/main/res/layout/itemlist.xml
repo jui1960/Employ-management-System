@@ -20,7 +20,7 @@
         android:padding="12dp">
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/ivEmployeeAvatar"
+            android:id="@+id/employimage"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:src="@drawable/ic_launcher_background"
@@ -37,8 +37,8 @@
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/ivEmployeeAvatar"
-            app:layout_constraintTop_toTopOf="@id/ivEmployeeAvatar" />
+            app:layout_constraintStart_toEndOf="@id/employimage"
+            app:layout_constraintTop_toTopOf="@id/employimage" />
 
         <TextView
             android:id="@+id/tvEmployeeRole"
