@@ -1,19 +1,16 @@
 package com.example.employmanagementsystem
 
 import android.os.Bundle
-import android.view.View
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.ViewModelProvider
 import com.example.employmanagementsystem.databinding.ActivityAddScreenBinding
 
 class AddScreen : AppCompatActivity() {
     private lateinit var binding: ActivityAddScreenBinding
-    private lateinit var viewModel: ViewModel
+    private lateinit var viewModel: EmployViewModel
     private var selectedImageUri: android.net.Uri? = null
 
     private val imgPiker = registerForActivityResult(ActivityResultContracts.GetContent()) { uri ->
@@ -32,7 +29,7 @@ class AddScreen : AppCompatActivity() {
 
 
 
-            viewModel = ViewModelProvider(this)[ViewModel::class.java]
+            viewModel = ViewModelProvider(this)[EmployViewModel::class.java]
 
             binding.imgadd.setOnClickListener {
                 imgPiker.launch("image/*")

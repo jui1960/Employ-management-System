@@ -3,9 +3,8 @@ package com.example.employmanagementsystem
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.liveData
 
-class ViewModel(application: Application): AndroidViewModel(application) {
+class EmployViewModel(application: Application): AndroidViewModel(application) {
 
     private val repository : Repository
 

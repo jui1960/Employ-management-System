@@ -8,13 +8,12 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.viewbinding.ViewBinding
 import com.example.employmanagementsystem.databinding.ActivityHomeScreenBinding
 
 class HomeScreen : AppCompatActivity() {
 
     private lateinit var binding: ActivityHomeScreenBinding
-    private lateinit var viewModel: ViewModel
+    private lateinit var viewModel: EmployViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -30,7 +29,7 @@ class HomeScreen : AppCompatActivity() {
         }
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
 
-        viewModel = ViewModelProvider(this)[ViewModel::class.java]
+        viewModel = ViewModelProvider(this)[EmployViewModel::class.java]
 
         viewModel.liveData.observe(this) { list ->
             binding.cnt.text = "${list.size}"
