@@ -69,6 +69,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/cnt"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="120"
@@ -179,23 +180,28 @@
         app:layout_constraintTop_toBottomOf="@id/actionsRow" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvEmployees"
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvRecentTitle"
         tools:listitem="@layout/itemlist" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="12dp"
         android:src="@android:drawable/ic_input_add"
-        app:tint="#FFFFFF"
         app:backgroundTint="#84D5FA"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:borderWidth="0dp"
         app:elevation="15dp"
-        app:borderWidth="0dp"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:tint="#FFFFFF" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

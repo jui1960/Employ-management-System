@@ -26,7 +26,7 @@ class EmployAdapter(
         position: Int
     ) {
         val data = list[position]
-        holder.binding.employimage.setImageResource(R.drawable.ic_launcher_background)
+        holder.binding.employimage.setImageURI(android.net.Uri.parse(data.img))
         holder.binding.tvEmployeeName.text = data.name
         holder.binding.tvEmployeeRole.text = data.position
 

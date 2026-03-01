@@ -18,6 +18,6 @@ interface EmployDao {
     @Delete
     fun delete(employdata: Data)
 
-    @Query("SELECT * FROM `employ data` ORDER By id DESC")
-    fun getalldata(): LiveData<List<Data>>
+    @Query("SELECT * FROM `employ_data` ORDER By id DESC")
+    fun getalldata(): List<Data>
 }

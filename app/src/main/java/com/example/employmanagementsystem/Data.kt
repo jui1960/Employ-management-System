@@ -3,13 +3,13 @@ package com.example.employmanagementsystem
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "employ data")
+@Entity(tableName = "employ_data")
 data class Data (
     @PrimaryKey(autoGenerate = true)
     val id : Int = 0,
-    val img : Int,
+    val img : String?,
     val name : String,
     val position : String,
     val education : String,
-    val age : Int
+    val salary : Int
 )
